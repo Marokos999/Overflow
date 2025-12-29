@@ -14,7 +14,7 @@ var postgres = builder.AddPostgres("postgres", port: 5432)
     .WithDataVolume("postgres-data")
     .WithPgAdmin();
 
-var questionDb = postgres.AddDatabase("question-db");
+var questionDb = postgres.AddDatabase("questionDb");
 
 var questionService = builder.AddProject<QuestionService>("question-svc")
     .WithReference(keycloak.GetEndpoint("http"))   
